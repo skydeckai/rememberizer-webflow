@@ -1,5 +1,9 @@
 # Rememberizer LLM Ready Documentation
 
+*Generated at 2024-10-23 03:30:43 PDT. Available as raw content at [rememberizer-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/rememberizer-webflow/refs/heads/main/rememberizer-llm-ready-documentation.md).*
+
+This document provides a comprehensive, consolidated reference of Rememberizer's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
+
 ```
 ==> SUMMARY.md <==
 # Table of contents
@@ -15,6 +19,10 @@
   * [Rememberizer Memory integration](personal/rememberizer-memory-integration.md)
   * [Rememberizer App](personal/rememberizer-app.md)
   * [Mementos Filter Access](personal/mementos-filter-access.md)
+  * [Manage third-party apps](personal/manage-third-party-apps.md)
+  * [Common knowledge](personal/common-knowledge.md)
+  * [Search your knowledge](personal/search-your-knowledge.md)
+  * [Manage your embedded knowledge](personal/manage-your-embedded-knowledge.md)
 * [Developer](developer/README.md)
   * [Registering Rememberizer apps](developer/registering-rememberizer-apps.md)
   * [Authorizing Rememberizer apps](developer/authorizing-rememberizer-apps.md)
@@ -22,6 +30,7 @@
   * [Talk-to-Slack the Sample Web App](developer/talk-to-slack-the-sample-web-app.md)
   * [Registering and using API Keys](developer/registering-and-using-api-keys.md)
   * [LangChain integration](developer/langchain-integration.md)
+  * [Vector Stores](developer/vector-stores.md)
   * [API documentations](developer/api-documentations/README.md)
     * [Memorize content to Rememberizer](developer/api-documentations/memorize-content-to-rememberizer.md)
     * [Retrieve documents](developer/api-documentations/retrieve-documents.md)
@@ -31,10 +40,20 @@
     * [List available data source integrations](developer/api-documentations/list-available-data-source-integrations.md)
     * [Retrieve current user's account details](developer/api-documentations/retrieve-current-users-account-details.md)
     * [Get all added public knowledge](developer/api-documentations/get-all-added-public-knowledge.md)
+    * [Vector Store APIs](developer/api-documentations/vector-store/README.md)
+      * [Get vector store's information](developer/api-documentations/vector-store/get-vector-stores-information.md)
+      * [Get a list of documents in a Vector Store](developer/api-documentations/vector-store/get-a-list-of-documents-in-a-vector-store.md)
+      * [Get the information of a document](developer/api-documentations/vector-store/get-the-information-of-a-document.md)
+      * [Add new text document to a Vector Store](developer/api-documentations/vector-store/add-new-text-document-to-a-vector-store.md)
+      * [Upload files to a Vector Store](developer/api-documentations/vector-store/upload-files-to-a-vector-store.md)
+      * [Update file's content in a Vector Store](developer/api-documentations/vector-store/update-files-content-in-a-vector-store.md)
+      * [Remove a document in Vector Store](developer/api-documentations/vector-store/remove-a-document-in-vector-store.md)
+      * [Search for Vector Store documents by semantic similarity](developer/api-documentations/vector-store/search-for-vector-store-documents-by-semantic-similarity.md)
 * [Notices](notices/README.md)
   * [Terms of Use](notices/terms-of-use.md)
   * [Privacy Policy](notices/privacy-policy.md)
   * [Releases](notices/releases/README.md)
+    * [Oct 18th, 2024](notices/releases/oct-18th-2024.md)
     * [Oct 11th, 2024](notices/releases/oct-11th-2024.md)
     * [Oct 4th, 2024](notices/releases/oct-4th-2024.md)
     * [Sep 27th, 2024](notices/releases/sep-27th-2024.md)
@@ -67,6 +86,7 @@
     * [Jan 15th, 2024](notices/releases/jan-15th-2024.md)
   * [B2B](notices/b2b/README.md)
     * [About Reddit Agent](notices/b2b/about-reddit-agent.md)
+* [Rememberizer LLM Ready Documentation](rememberizer-llm-ready-documentation.md)
 
 
 ==> README.md <==
@@ -93,7 +113,7 @@ description: Why Rememberizer is more than just a database or keyword search eng
 
 Rememberizer uses vector embeddings in vector databases to enable searches for semantic similarity within user knowledge sources. This is a fundamentally more advanced and nuanced form of information retrieval than simply looking for keywords in content through a search engine or database.
 
-
+<figure><img src="../.gitbook/assets/multidimensional_space.png" alt=""><figcaption><p>A multidimensional Space</p></figcaption></figure>
 
 In their most advanced form (as used by Rememberizer) vector embeddings are created by language models with architectures similar to the AI LLMs (Large Language Models) that underpin OpenAI's gpt models and ChatGPT service as well as models/services from Google (Gemini) , Anthropic (Claude), Facebook (LLama 2) and others. For this reason it is natural to use vector embeddings to discover relevant knowledge to include in the context of AI model prompts. The technologies are complementary and somewhat equivalent. For this reason most providers of LLMs as a service will also produce vector embeddings as a service (for example:  [a blog from Together AI](https://www.together.ai/blog/embeddings-endpoint-release) or [another blog from OpenAI](https://openai.com/blog/introducing-text-and-code-embeddings)).
 
@@ -135,21 +155,21 @@ description: >-
 1. Sign in to your account.
 2. Navigate to **Personal > Your Knowledge** tab, or visit [https://rememberizer.ai/personal/knowledge](https://rememberizer.ai/personal/knowledge). You should see all available knowledge sources there, including Slack.
 
-
+<figure><img src="../.gitbook/assets/slack_personal_knowledge.png" alt=""><figcaption><p>Your Knowledge, ready to connect to Slack</p></figcaption></figure>
 
 3. Click the **"Connect"** button of the Slack knowledge source. You will be redirected to a new page asking for your permission to allow Rememberizer to access your Slack workspace.
 
-
+<figure><img src="../.gitbook/assets/slack_oauth.png" alt=""><figcaption><p>Slack OAuth screen</p></figcaption></figure>
 
 > **Note:** If you see a warning that this application is not authorized by Slack, it is because Rememberizer is intended to search for Slack content outside of Slack, which is against the [Slack App Directory Guidelines](https://api.slack.com/directory/guidelines).
 
 4. Click **"Allow"** to install the Rememberizer Slack app to your workspace. Once you've granted the necessary permissions, you'll be redirected back to our platform, at which you should see your Slack workspace connected and a side panel pops up.
 
-
+<figure><img src="../.gitbook/assets/slack_auth_redirect.png" alt=""><figcaption><p>A-COMPANY has been added as a knowledge source</p></figcaption></figure>
 
 5. Now that you're connected, you need to specify which channels our product should source messages from. Choose your desired files or folders from the side panel. If the side panel does not appear, click on the **"Select"** button to open the side panel.
 
-
+<figure><img src="../.gitbook/assets/slack_choose_knowledge.png" alt=""><figcaption><p>Select channels to be embedded as knowledge</p></figcaption></figure>
 
 6. After selecting your channels, our system will begin embedding the messages and files. This process may take a few minutes depending on the amount of data.
 
@@ -160,6 +180,51 @@ Use the [Memento](mementos-filter-access.md) feature to filter access to the sou
 You can also [Search Your Knowledge](https://rememberizer.ai/personal/search) through our web UI, or better, use this knowledge in an LLM through our GPT app or our public API.
 
 And that's it! If you encounter any issues during the process, feel free to contact our support team.
+
+
+==> personal/common-knowledge.md <==
+---
+description: >-
+  Enhance your knowledge or get started fast by adding AI access to pre-indexed
+  data from us and others.
+---
+
+# Common knowledge
+
+## What is common knowledge
+
+In Rememberizer, registered users **(publishers)** can select their uploaded documents through mementos and share them publicly as common knowledge. Other users **(subscribers)** can access this public knowledge and add it to their own resources.
+
+By contributing their data, other users can collectively enhance the available information on the common knowledge page. This collaborative approach allows all users to access a richer data source, thereby improving the learning capabilities of their AI applications.
+
+## Add public common knowledge
+
+In order to subscribe a common knowledge to your resource, follow the instructions below
+
+* On navigation bar, choose **Personal > Common Knowledge**. Then, you will see the public common knowledge page.
+
+<figure><img src="../.gitbook/assets/navbar_browse_ck.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/public_ck_page.png" alt=""><figcaption></figcaption></figure>
+
+* Then, look for the common knowledge you want to subscribe. You can look up the knowledge by typing the knowledge's name on search bar. You can optionally choose the filter option next to the search bar.
+
+<figure><img src="../.gitbook/assets/filter_option_ck.png" alt="" width="249"><figcaption><p>Filter of search bar</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/public_ck_search.png" alt=""><figcaption><p>Example of a search result</p></figcaption></figure>
+
+* Then click **Add** button on the public common knowledge. After successful subscribe, you will see the **Add** button change to **Remove** button.
+
+<figure><img src="../.gitbook/assets/not_add_ck.png" alt=""><figcaption><p>Unadded common knowledge</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/added_ck.png" alt=""><figcaption><p>Added common knowledge</p></figcaption></figure>
+
+* Later, if you want to remove a subscribed knowledge, click the **Remove** button.
+
+## Create a common knowledge
+
+For detailed instructions of creating and sharing a common knowledge, visit this page [registering-and-using-api-keys.md](../developer/registering-and-using-api-keys.md "mention").
+
 
 
 ==> personal/rememberizer-google-drive-integration.md <==
@@ -174,35 +239,35 @@ description: >-
 1. Sign in to your account.
 2. Navigate to **Personal > Your Knowledge** tab, or visit [https://rememberizer.ai/personal/knowledge](https://rememberizer.ai/personal/knowledge). You should see all available knowledge sources there, including Google Drive.
 
-
+<figure><img src="../.gitbook/assets/drive_personal_knowledge.png" alt=""><figcaption></figcaption></figure>
 
 3. Click the **"Connect"** button of the Google Drive knowledge source. You will be redirected to a new page asking for your permission to allow Rememberizer to access your Google Drive. Select your Google Drive account.
 
-
+<figure><img src="../.gitbook/assets/drive_oauth_step_1.jpg" alt=""><figcaption></figcaption></figure>
 
 4. Approve the app by clicking on "**Continue"**.
 
-
+<figure><img src="../.gitbook/assets/drive_oauth_step_2.jpg" alt=""><figcaption></figcaption></figure>
 
 5. Allow Rememberizer to **See and download all your Google Drive files** by clicking **"Continue".**
 
-
+<figure><img src="../.gitbook/assets/drive_oauth_step_3.jpg" alt=""><figcaption></figcaption></figure>
 
 6. You'll be redirected back to our platform, at which you should see your Drive account connected and a side panel pops up.
 
-
+<figure><img src="../.gitbook/assets/drive_auth_redirect.png" alt=""><figcaption></figcaption></figure>
 
 7. Now that you're connected, you need to specify which files and folders our product should embed. Choose your desired files or folders from the side panel. If the side panel does not appear, click on the **"Select"** button to open the side panel.
 
-
+<figure><img src="../.gitbook/assets/drive_choose_knowledge.png" alt=""><figcaption></figcaption></figure>
 
 8. After selecting the files, click **"Add"** to start embedding your knowledge. You also need to check the box to agree with Rememberizer's policy of sharing your Google Drive data with third-party applications that you have specifically approved.
 
-
+<figure><img src="../.gitbook/assets/drive_choose_knowledge_checkbox.png" alt=""><figcaption></figcaption></figure>
 
 9. After selecting your files and folders, our system will begin embedding the messages and files. This process may take a few minutes depending on the amount of data.
 
-
+<figure><img src="../.gitbook/assets/drive_indexing.png" alt=""><figcaption></figcaption></figure>
 
 ### Limitations of Google Drive Integration
 
@@ -242,19 +307,19 @@ Rememberizer App is a MacOS desktop application that converts your local files i
 
 1. **Sign In:** To use the Rememberizer App, you need to sign in using your Rememberizer account. If you do not have a Rememberizer account, you'll need to create one.
 
+<figure><img src="../.gitbook/assets/rememberizer_app_sign_in.png" alt=""><figcaption></figcaption></figure>
 
-
-
+<figure><img src="../.gitbook/assets/rememberizer_app_success_auth.png" alt=""><figcaption></figcaption></figure>
 
 2. **Add Folders to the Data Source:** Once you have signed in, the Rememberizer App will begin operating in the background. You can access it by clicking the small icon located in the status bar, as illustrated below. For first-time use, you will need to add folders to the data source. This enables the Rememberizer App to convert files within those folders into vector embeddings and upload them to your Rememberizer Knowledge.
 
+<figure><img src="../.gitbook/assets/rememberizer_app_add_folder_1.png" alt=""><figcaption></figcaption></figure>
 
-
-
+<figure><img src="../.gitbook/assets/rememberizer_app_add_folder_2.png" alt=""><figcaption></figcaption></figure>
 
 3. **Embedding And Uploading:** The software will seamlessly integrate these vector embeddings into your Rememberizer Knowledge database. Track the upload process via the Rememberizer status tab.
 
-
+<figure><img src="../.gitbook/assets/rememberizer_app_status.png" alt=""><figcaption></figcaption></figure>
 
 ### Download links.
 
@@ -314,7 +379,7 @@ By default all apps have read-only access to Shared Memory, while each app can w
 
 The Global Settings allow user to configure the default permissions for all apps using Shared Memory. This includes:
 
-
+<figure><img src="../.gitbook/assets/memory_global_config.png" alt=""><figcaption><p>Config Memory in Knowledge Page</p></figcaption></figure>
 
 #### Default Memory and Data Access Permissions for Apps
 
@@ -323,17 +388,17 @@ The Global Settings allow user to configure the default permissions for all apps
 * **Disable Memory:** By default, apps cannot access or store memory data.
 * **Apply to All Option**: User can apply all app-specific permission settings back to the defaults chosen in Global Settings.
 
-
+<figure><img src="../.gitbook/assets/memory_settings_panel.png" alt="" width="375"><figcaption></figcaption></figure>
 
 User can clear all Memory documents with _**Forget your memory**_ option:
 
-
+<figure><img src="../.gitbook/assets/forget_memory_popup.png" alt=""><figcaption><p>Confirmation Modal when Forget Memory</p></figcaption></figure>
 
 #### App Settings
 
 For each connected app, user can customize the Shared Memory permissions. Click on the **"Find an App"**, then click **"Your connected apps"** or go to the link [https://rememberizer.ai/personal/apps/connected](https://rememberizer.ai/personal/apps/connected) to see the list of your connected apps. Then, click **"Change"** on the Memory of the app you want to custom:
 
-
+<figure><img src="../.gitbook/assets/app_memory_config.png" alt=""><figcaption><p>Config Memory for each App in Connected Apps Page</p></figcaption></figure>
 
 #### Memory Access Permissions for Apps
 
@@ -361,26 +426,26 @@ Here, we will demonstrate a process using Remembeizer GPT App.
 
 *   After using Rememberizer GPT App, user want to memorize the third point "Zero-Cost Abstractions".
 
-    
+    <figure><img src="../.gitbook/assets/interact_rememberizer_gpt.png" alt="" width="375"><figcaption><p>Interacting with Rememberizer GPT Apps</p></figcaption></figure>
 * To use the Rememberizer App's Memory feature, user must first authorize the app to access your project. Use the **memorize** command to tell the app what knowledge it needs to store.
 
-
+<figure><img src="../.gitbook/assets/rememberizer_auth_sign_in.png" alt="" width="563"><figcaption><p>Sign In to authorize Rememberizer</p></figcaption></figure>
 
 * User can Config the Memory Option here, with the default value is based on the Global Config
 
-
+<figure><img src="../.gitbook/assets/authorize_connection_screen.png" alt="" width="563"><figcaption><p>Authorizing Screen</p></figcaption></figure>
 
 The Rememberizer now successfully memorizes knowledge.
 
-
+<figure><img src="../.gitbook/assets/successful_memorize_knowledge.png" alt="" width="563"><figcaption></figcaption></figure>
 
 * In Rememberizer, user can see the recent content at **Embed Knowledge Details** page.
 
-
+<figure><img src="../.gitbook/assets/embedded_knowledge_detail.png" alt="" width="563"><figcaption></figcaption></figure>
 
 With the **Talk to Slack** app, user can seamlessly apply and continue their progress using the data they have committed to memory. For example, memorized information they can easily query and retrieve
 
-
+<figure><img src="../.gitbook/assets/recall_memory_talk_to_slack.png" alt=""><figcaption><p>Recall Memory Data in another app</p></figcaption></figure>
 
 ### Using Memory Data via Memento
 
@@ -389,7 +454,7 @@ With the **Talk to Slack** app, user can seamlessly apply and continue their pro
 
 > Note: In older version, Rememberizer saves content into files and combine into folder for each date.
 
-
+<figure><img src="../.gitbook/assets/memory_memento_feature.png" alt="" width="563"><figcaption></figcaption></figure>
 
 With the [Memento Feature](https://docs.rememberizer.ai/personal/mementos-filter-access#what-is-a-memento-and-why-do-they-exist), user can utilize the Memory data even when the Memory App Config is Off.
 
@@ -398,9 +463,92 @@ With the [Memento Feature](https://docs.rememberizer.ai/personal/mementos-filter
 You can also [Search Your Knowledge](https://rememberizer.ai/personal/search) through our web UI, or better, use this knowledge in an LLM through our GPT app or our public API.
 
 
+==> personal/search-your-knowledge.md <==
+---
+description: >-
+  In Rememberizer, you can post a theme or question, and Rememberizer will
+  provide a list of files and extracts parts that are conceptually similar.
+---
+
+# Search your knowledge
+
+## Search in Rememberizer
+
+* In the navigation bar, choose **Personal > Search Your Knowledge**. Then you will see the search page in Rememberizer
+
+<figure><img src="../.gitbook/assets/navbar_search_rememberizer (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/search_rememberizer_page.png" alt=""><figcaption></figcaption></figure>
+
+* Type the question or theme you want to search, then choose the the memento you want to limit the app's access and click Rememberizer button (or press Enter). The search process may take a few minutes, depending on the amount of data in the Memento.&#x20;
+
+<figure><img src="../.gitbook/assets/memento_search_rememberizer.png" alt="" width="269"><figcaption><p>Memento Filtering in search Rememberizer</p></figcaption></figure>
+
+* Eventually, you will see list of documents matching question or theme you require. You can click to the file and it will dropdown the matching chunk text related to your question or theme.
+
+<figure><img src="../.gitbook/assets/search_result_rememberizer.png" alt=""><figcaption><p>An example of search result</p></figcaption></figure>
+
+
 ==> personal/README.md <==
 # Personal
 
+
+
+==> personal/manage-third-party-apps.md <==
+# Manage third-party apps
+
+## Explore third-party apps and service
+
+User can view and explore all third-party apps that connect with Rememberizer in **App directory** page with the below instructions.
+
+* On the navigation bar, choose **Personal > Find an App**. Then, you will see the App directory page.
+
+<figure><img src="../.gitbook/assets/navbar_browsing_app_dir.png" alt=""><figcaption><p>Navigation bar browsing App Directory page</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/app_dir_page.png" alt=""><figcaption><p>App directory page</p></figcaption></figure>
+
+* Find the app you want to explore. You can do this by type the name of the app in search bar with optional **filter and sorting order.**
+
+<figure><img src="../.gitbook/assets/search_app_dir_page.png" alt=""><figcaption><p>Search bar with filter and sort order button</p></figcaption></figure>
+
+* Click on the **name of the third-party app** or **Explore button** to open the app.&#x20;
+
+<figure><img src="../.gitbook/assets/location_name_explore_button.png" alt=""><figcaption><p>App's name and Explore button</p></figcaption></figure>
+
+* When using the app, it will requires authorizing the apps with Rememberizer. Technical details of the flow can be visited at [authorizing-rememberizer-apps.md](../developer/authorizing-rememberizer-apps.md "mention") page. We will use **Rememberizer GPT app** as an example of the UI flows of authorization. After the first chat, you will see the app ask to sign in the Rememberizer.
+
+<figure><img src="../.gitbook/assets/RememberizerGPT_auth.png" alt=""><figcaption><p>Sign in request from Rememberizer GPT app</p></figcaption></figure>
+
+* Click on the **Sign in** button. You will be redirected to the Authorization page.
+
+<figure><img src="../.gitbook/assets/authorize_third_party_page.png" alt=""><figcaption><p>Authoriztion page</p></figcaption></figure>
+
+* You can modify the Memento and Memory that the app can view and use by click on the **Change** button and select what you want.
+
+> **Note:** Detail information about Memento, please visit [mementos-filter-access.md](mementos-filter-access.md "mention") page.
+
+> **Note:** Detail information about Memory integration, please visit [rememberizer-memory-integration.md](rememberizer-memory-integration.md "mention") page.
+
+* Click **Authorize** to complete the process. You then will be directed back to the app again and you can chat with it normally.
+
+> **Note:** In case you click **Cancel** button, you will be directed to the app landing page again and the app will not be displayed in the **App directory** page but will instead be on **Your connected apps** page. More detail information please visit second part [#manage-your-connected-apps](manage-third-party-apps.md#manage-your-connected-apps "mention") if you want to completely cancel the authorization process.
+
+<figure><img src="../.gitbook/assets/success_auth_rememberizer_gpt.png" alt=""><figcaption><p>Success connected account</p></figcaption></figure>
+
+## Manage your connected apps
+
+On the **App directory** page, choose **Your connected apps** to browse the page.&#x20;
+
+<figure><img src="../.gitbook/assets/browse_your_connected_app.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/your_connected_app_page.png" alt=""><figcaption><p>Your connected apps page</p></figcaption></figure>
+
+This page categorizes apps into two types based on their status: **Pending Apps** and **Connected Apps**.
+
+* **Pending Apps**: These are the apps which you click **Cancel** button while authorizing the the app on Rememberizer.&#x20;
+  * Click **Continue** if you want to complete the authorization process.&#x20;
+  * Otherwise, click **Cancel** to completely withdraw the authorization. The app will then be displayed in **App Directory** page again.
+* **Connected Apps:** You can config the **Memento** or **Memory integration** of specific connected app by click on the Change option (or Select if the Memento has not been chosen). Click **Disconnect** if you want to disconnect the third-party app from the Rememberizer.
 
 
 ==> personal/rememberizer-gmail-integration.md <==
@@ -415,35 +563,35 @@ description: >-
 1. Sign in to your account.
 2. Navigate to **Personal > Your Knowledge** tab, or visit [https://rememberizer.ai/personal/knowledge](https://rememberizer.ai/personal/knowledge). You should see all available knowledge sources there, including Gmail.
 
-
+<figure><img src="../.gitbook/assets/gmail_personal_knowledge.png" alt=""><figcaption></figcaption></figure>
 
 3. Click the **"Connect"** button for the Gmail knowledge source. You will be redirected to a new page asking for your permission to allow Rememberizer to access your Gmail. Select your Gmail account.
 
-
+<figure><img src="../.gitbook/assets/gmail_oauth_step_1.png" alt=""><figcaption></figcaption></figure>
 
 4. Approve the app by clicking "**Continue"**.
 
-
+<figure><img src="../.gitbook/assets/gmail_oauth_step_2.png" alt=""><figcaption></figcaption></figure>
 
 5. Grant Rememberizer **permissions** to access your Gmail by clicking **"Continue".**
 
-
+<figure><img src="../.gitbook/assets/gmail_oauth_step_3.png" alt=""><figcaption></figcaption></figure>
 
 6. You'll be redirected back to our platform, where you should see your Gmail connected.
 
-
+<figure><img src="../.gitbook/assets/gmail_auth_redirect.png" alt=""><figcaption></figcaption></figure>
 
 7. Now that you're connected, you need to specify which email labels our product should embed. Click on the **"Select"** button and choose your desired email labels from the side panel. All emails that belong to the selected labels will be embedded.
 
-
+<figure><img src="../.gitbook/assets/gmail_choose_knowledge.png" alt=""><figcaption></figcaption></figure>
 
 8. After selecting the labels, click **"Add"** to start embedding your knowledge. You also need to check the box to agree with Rememberizer's policy of sharing your Gmail data with third-party applications that you have specifically approved.
 
-
+<figure><img src="../.gitbook/assets/gmail_choose_knowledge_checkbox.png" alt=""><figcaption></figcaption></figure>
 
 9. Once you've selected your labels, our system will begin embedding the emails and attachments. This process may take a few minutes, depending on the amount of data.
 
-
+<figure><img src="../.gitbook/assets/gmail_indexing.png" alt=""><figcaption></figcaption></figure>
 
 ### What's next?
 
@@ -466,19 +614,19 @@ description: >-
 1. Sign in to your account.
 2. Navigate to **Personal > Your Knowledge** tab, or visit [https://rememberizer.ai/personal/knowledge](https://rememberizer.ai/personal/knowledge). You should see all available knowledge sources there, including Dropbox.
 
-
+<figure><img src="../.gitbook/assets/dropbox_personal_knowledge.png" alt=""><figcaption><p>Dropbox, ready to be connected as a knowledge source</p></figcaption></figure>
 
 3. Click **"Allow"** to install the Rememberizer Dropbox app to your account.
 
-
+<figure><img src="../.gitbook/assets/dropbox_oauth.png" alt=""><figcaption></figcaption></figure>
 
 4. Once you've granted the necessary permissions, you'll be redirected back to our platform, at which you should see your Dropbox account connected and a side panel pops up.
 
-
+<figure><img src="../.gitbook/assets/dropbox_auth_redirect.png" alt=""><figcaption></figcaption></figure>
 
 5. Now that you're connected, you need to specify which files and folders our product should embed. Choose your desired files or folders from the side panel. If the side panel does not appear, click on the **"Select"** button to open the side panel.
 
-
+<figure><img src="../.gitbook/assets/dropbox_choose_knowledge.png" alt=""><figcaption></figcaption></figure>
 
 7. After selecting your files and folders, click **"Add"** and our system will begin the embedding. This process may take a few minutes depending on the amount of data.
 
@@ -505,6 +653,73 @@ You can also [Search Your Knowledge](https://rememberizer.ai/personal/search) th
 And that's it! If you encounter any issues during the process, feel free to contact our support team.
 
 
+==> personal/manage-your-embedded-knowledge.md <==
+---
+description: >-
+  Rememberizer allows users to efficiently manage their stored files from
+  various sources. This section will show you how to access, search, filter and
+  manage your uploaded file in the knowledge
+---
+
+# Manage your embedded knowledge
+
+## Browse Embedded Knowledge Details page
+
+On the navigation bar, choose **Personal > Your Knowledge**.  Locate the **View Details** button on the right side of the "Your Knowledge" section and click it. Then, you will see the **Embedded knowledge detail** page.
+
+<figure><img src="../.gitbook/assets/browse_knowledge_detail_page_1.png" alt=""><figcaption><p>Your Knowledge section and <strong>View Details</strong> button</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/browse_knowledge_detail_page_2.png" alt=""><figcaption><p>Embed Knowledge Detail page</p></figcaption></figure>
+
+The table of knowledge files' details includes these attributes:
+
+* **Documents:** Name of the document or slack channel.
+* **Source:** The resource from where the file is uploaded (Drive, Mail, Slack, Dropbox, and Rememberizer App).
+* **Directory:** The directory where the file locates in the source.
+* **Status**: The status of the file (indexing, indexed or error).
+* **Size**: The size of the file.
+* **Indexed on**: The date when the file is indexed.
+* **Actions:** The button to delete the file. For file whose status is error, there will also be a retry icon next to the trash icon (delete button). 
+
+## Features of detail page
+
+### Search and filter the files
+
+User can search the document by name with the **search bar**.  Type the name in the bar, then press Enter to get your result.
+
+<figure><img src="../.gitbook/assets/search_manage_knowledge_result.png" alt=""><figcaption><p>Result of a search</p></figcaption></figure>
+
+You can also optionally choose the **Status filter** and **Source filter.** This will quickly locate specific documents by narrowing down your search criteria.&#x20;
+
+<figure><img src="../.gitbook/assets/Source filter.png" alt="" width="247"><figcaption><p>Source filter</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Status_filter.png" alt="" width="257"><figcaption><p>Status filter</p></figcaption></figure>
+
+### Delete an uploaded file
+
+Find the file you want to delete (by search if needed). Then click on the **trash icon** on the **Action** column.&#x20;
+
+<figure><img src="../.gitbook/assets/delete_file.png" alt=""><figcaption><p>File with delete icon</p></figcaption></figure>
+
+A modal will pop up to confirm deletion. Click **Confirm** then you will see the file deleted.
+
+<figure><img src="../.gitbook/assets/delete_file_pop_up.png" alt=""><figcaption><p>Delete confirmation modal</p></figcaption></figure>
+
+### Retry indexing error files
+
+User can retry to embed those files which Rememberizer failed to index. To retry indexing a specific file, simply click the retry button next to the delete button in **Action** column.
+
+<figure><img src="../.gitbook/assets/err_retry_button.png" alt=""><figcaption><p>Retry button for specific error file</p></figcaption></figure>
+
+If user want to retry indexing all error files, click the retry button next to the label of **Action** column.
+
+<figure><img src="../.gitbook/assets/err_retry_all_button.png" alt=""><figcaption><p>Retry button for all error files</p></figcaption></figure>
+
+Below is the image after sucessful retry indexing the error file from Gmail integration.
+
+<figure><img src="../.gitbook/assets/success_retry_indexing.png" alt=""><figcaption><p>Success retry indexing error file</p></figcaption></figure>
+
+
 ==> personal/mementos-filter-access.md <==
 ---
 description: Use a Memento with each app integration to limit its access to your Knowledge
@@ -526,21 +741,21 @@ This guide will walk you through the process of creating a Mementos
 
 1. Navigate to **Personal > Memento: Limit Access** in tab, or visit [https://rememberizer.ai/personal/memento](https://rememberizer.ai/personal/memento). You should see all Mementos the left of the screen
 
-
+<figure><img src="../.gitbook/assets/memento_page.png" alt=""><figcaption></figcaption></figure>
 
 2. Click **Create a new memento**.  Then fill the name for your custom memento and click **Create**. After that, you should your memento added and list of data sources can be included in your memento.
 
+<figure><img src="../.gitbook/assets/create_memento.png" alt=""><figcaption></figcaption></figure>
 
-
-
+<figure><img src="../.gitbook/assets/memento_detail.png" alt=""><figcaption></figcaption></figure>
 
 3. Click **Refine** on the data source you want to refine, the side panel will pop up. Then choose to add folders or files, and click **Refine** to add those data sources to the Memento.
 
-
+<figure><img src="../.gitbook/assets/memento_refine_knowledge.png" alt=""><figcaption></figcaption></figure>
 
 4. Also, for common knowledge source, you can click **Add** to include the knowledge in Memento.
 
-
+<figure><img src="../.gitbook/assets/memento_add_common_knowledge.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> developer/registering-and-using-api-keys.md <==
@@ -561,23 +776,23 @@ First, you need to have [a memento](../personal/mementos-filter-access.md) creat
 
 To create a common knowledge, sign in into your Rememberizer account and visit [your common knowledge page](https://rememberizer.ai/personal/common-knowledge). Choose **"Your shared knowledge"**, then click **"Get started"**.
 
-
+<figure><img src="../.gitbook/assets/common_knowledge_page.png" alt=""><figcaption></figcaption></figure>
 
 Then pick one of the mementos you have created previously, you can also choose **"All"** or **"None"**.
 
 <div align="center" data-full-width="false">
 
-
+<figure><img src="../.gitbook/assets/create-common-knowledge-1.png" alt="" width="375"><figcaption></figcaption></figure>
 
 </div>
 
 Finally fill out the common knowledge's name, description and give it a representative photo.
 
-
+<figure><img src="../.gitbook/assets/create-common-knowledge-2.png" alt="" width="375"><figcaption></figcaption></figure>
 
 After you have filled the form, click on "Share knowledge" in the bottom to create your common knowledge. After that, turn on the **"Enable sharing"** in your knowledge and click **"Confirm"** in the pop up modal.
 
-
+<figure><img src="../.gitbook/assets/common_knowledge_sharing.png" alt=""><figcaption></figcaption></figure>
 
 You now are ready to obtain its API Key and access its documents via API calls.
 
@@ -585,11 +800,11 @@ You now are ready to obtain its API Key and access its documents via API calls.
 
 For your common knowledge, click on the three dots on its top right, then choose "API Key". If there is none yet, one will be created for you. If the API Key exists it will be returned.
 
-
+<figure><img src="../.gitbook/assets/knowledge_open_API_key.png" alt=""><figcaption></figcaption></figure>
 
 In the **"Manage your API Key"** panel, you can click on the **"eye"** button to show/hide, the **"copy"** button to copy the key to clipboard, and **"Regenerate API Key"** to invalidate the old key and create a new one (apps that are accessing your documents through api calls won't be able to access until you have updated the new key into them).
 
-
+<figure><img src="../.gitbook/assets/copy-api-key.png" alt=""><figcaption></figcaption></figure>
 
 After obtaining the API Key, you can proceed to using it in your API calls to Rememberizer to query your indexed documents and contents.
 
@@ -599,7 +814,7 @@ To access Rememberizer endpoints, you will use the API Key in the `X-API-Key` he
 
 You can also use the API Key in a custom GPT app. Start by [creating a GPT in the ChatGPT UI](https://chat.openai.com/gpts/editor). Make sure to choose the Authentication Type as "API Key", Auth Type as "Custom" and the header as "X-Api-Key", then paste the key you copied previously into the API Key textbox.
 
-
+<figure><img src="../.gitbook/assets/gpt-app-using-api-key.png" alt="" width="375"><figcaption></figcaption></figure>
 
 
 ==> developer/langchain-integration.md <==
@@ -633,31 +848,31 @@ Once you have an API key, you must set it as an environment variable `REMEMBERIZ
 
 ### Basic usage[​](https://python.langchain.com/docs/integrations/retrievers/rememberizer/#basic-usage) <a href="#basic-usage" id="basic-usage"></a>
 
-```
+||CODE_BLOCK||
 # Setup API key
 from getpass import getpass
 
 REMEMBERIZER_API_KEY = getpass()
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 import os
 
 from langchain_community.retrievers import RememberizerRetriever
 
 os.environ["REMEMBERIZER_API_KEY"] = REMEMBERIZER_API_KEY
 retriever = RememberizerRetriever(top_k_results=5)
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 docs = retriever.get_relevant_documents(query="How does Large Language Models works?")
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 docs[0].metadata  # meta-information of the Document
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 {'id': 13646493,
  'document_id': '17s3LlMbpkTk0ikvGwV0iLMCj-MNubIaP',
  'name': 'What is a large language model (LLM)_ _ Cloudflare.pdf',
@@ -669,35 +884,35 @@ docs[0].metadata  # meta-information of the Document
  'modified_time': '',
  'indexed_on': '2024-04-04T03:36:28.886170Z',
  'integration': {'id': 347, 'integration_type': 'google_drive'}}
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 print(docs[0].page_content[:400])  # a content of the Document
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 before, or contextualized in new ways. on some level they " understand " semantics in that they can associate words and concepts by their meaning, having seen them grouped together in that way millions or billions of times. how developers can quickly start building their own llms to build llm applications, developers need easy access to multiple data sets, and they need places for those data sets 
-```
+||CODE_BLOCK||
 
 ## Usage in a chain
 
-```
+||CODE_BLOCK||
 OPENAI_API_KEY = getpass()
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 from langchain.chains import ConversationalRetrievalChain
 from langchain_openai import ChatOpenAI
 
 model = ChatOpenAI(model_name="gpt-3.5-turbo")
 qa = ConversationalRetrievalChain.from_llm(model, retriever=retriever)
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 questions = [
     "What is RAG?",
     "How does Large Language Models works?",
@@ -709,9 +924,9 @@ for question in questions:
     chat_history.append((question, result["answer"]))
     print(f"-> **Question**: {question} \n")
     print(f"**Answer**: {result['answer']} \n")
-```
+||CODE_BLOCK||
 
-```
+||CODE_BLOCK||
 -> **Question**: What is RAG? 
 
 **Answer**: RAG stands for Retrieval-Augmented Generation. It is an AI framework that retrieves facts from an external knowledge base to enhance the responses generated by Large Language Models (LLMs) by providing up-to-date and accurate information. This framework helps users understand the generative process of LLMs and ensures that the model has access to reliable information sources. 
@@ -719,7 +934,7 @@ for question in questions:
 -> **Question**: How does Large Language Models works? 
 
 **Answer**: Large Language Models (LLMs) work by analyzing massive data sets of language to comprehend and generate human language text. They are built on machine learning, specifically deep learning, which involves training a program to recognize features of data without human intervention. LLMs use neural networks, specifically transformer models, to understand context in human language, making them better at interpreting language even in vague or new contexts. Developers can quickly start building their own LLMs by accessing multiple data sets and using services like Cloudflare's Vectorize and Cloudflare Workers AI platform. 
-```
+||CODE_BLOCK||
 
 ### Related[​](https://python.langchain.com/docs/integrations/retrievers/rememberizer/#related) <a href="#related" id="related"></a>
 
@@ -742,13 +957,15 @@ The web application flow to authorize users for your app is as follows:
 2. The user chooses mementos to use with your application.
 3. Your application accesses the API with the user's access token.
 
+Visit [#explore-third-party-apps-and-service](../personal/manage-third-party-apps.md#explore-third-party-apps-and-service "mention") page to see the UI example of the flow.
+
 ### Step 1. Request a user's Rememberizer identity
 
 Redirect the user to the Rememberizer authorization server to initiate the authentication and authorization process.
 
-```
+||CODE_BLOCK||
 GET https://api.rememberizer.ai/api/v1/auth/oauth2/authorize/
-```
+||CODE_BLOCK||
 
 Parameters:
 
@@ -764,9 +981,9 @@ After users select their mementos, Rememberizer redirects back to your site with
 
 ### Step 4. Exchange authorization code for refresh and access tokens
 
-```
+||CODE_BLOCK||
 POST https://api.rememberizer.ai/api/v1/auth/oauth2/token/
-```
+||CODE_BLOCK||
 
 This endpoint takes the following input parameters.
 
@@ -776,16 +993,16 @@ This endpoint takes the following input parameters.
 
 The access token allows you to make requests to the API on a user's behalf.
 
-```
+||CODE_BLOCK||
 Authorization: Bearer OAUTH-TOKEN
 GET https://api.rememberizer.ai/api/me/
-```
+||CODE_BLOCK||
 
 For example, in curl you can set the Authorization header like this:
 
-```shell
+||CODE_BLOCK||shell
 curl -H "Authorization: Bearer OAUTH-TOKEN" https://api.rememberizer.ai/api/me/
-```
+||CODE_BLOCK||
 
 ## References
 
@@ -809,13 +1026,13 @@ We have created a Talk-to-Slack GPT on OpenAI. The Talk-to-Slack Web app is very
 
 <div align="left">
 
-
+<figure><img src="https://rememberizer-docs-assets.s3.amazonaws.com/talk-to-slack_web_app.png" alt=""><figcaption><p>Talk-to-Slack.com web app by Rememberizer on Heroku</p></figcaption></figure>
 
 </div>
 
 <div align="left">
 
-
+<figure><img src="https://rememberizer-docs-assets.s3.amazonaws.com/talk-to-slack_web_app.png" alt=""><figcaption><p>Talk to Slack GPT by Rememberizer on OpenAI</p></figcaption></figure>
 
 </div>
 
@@ -956,7 +1173,7 @@ To create a GPT, you will need to set the Authorized request origin of your Reme
 
 After creating an app, copy the **Client ID** and **Client Secret**. We will be using them when creating a GPT. The instruction about how to get these information can be visited at [Authorizing Rememberizer apps](https://docs.rememberizer.ai/developer/authorizing-rememberizer-apps).
 
-
+<figure><img src="../.gitbook/assets/registered_app_credentials.png" alt=""><figcaption></figcaption></figure>
 
 ### Create a GPT
 
@@ -987,14 +1204,14 @@ From the GPT editor:
     * Leave **Scope** blank.
     * Click **Save**.
 
-    
+    <figure><img src="../.gitbook/assets/gpt_auth_type_config.png" alt=""><figcaption></figcaption></figure>
 4. Fill in Rememberizer's OpenAPI spec. Copy the content in the expandable below and paste it into the **Schema** field:
 
 <details>
 
 <summary>Rememberizer_OpenAPI.yaml</summary>
 
-```yaml
+||CODE_BLOCK||yaml
 openapi: 3.1.0
 info:
   title: Rememberizer API
@@ -1459,14 +1676,14 @@ paths:
           description: Discussion not found.
         "500":
           description: Internal server error.
-```
+||CODE_BLOCK||
 
 </details>
 
 5. Add this link as the Privacy Policy: `https://docs.rememberizer.ai/notices/privacy-policy`.
 6. After creating the action, copy the callback URL and paste it into your Rememberizer app.
 
-
+<figure><img src="../.gitbook/assets/rememberizer_app_callback_url.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> developer/registering-rememberizer-apps.md <==
@@ -1480,10 +1697,10 @@ description: >-
 
 1.  In the top-left corner of any page, click on **Developer**, then click on **Registered App**.
 
-    
+    <figure><img src="../.gitbook/assets/registered_apps_browse.png" alt=""><figcaption></figcaption></figure>
 2.  Click **Register new app**. A popup window will appear to fill in your app information
 
-    
+    <figure><img src="../.gitbook/assets/register_new_app.png" alt=""><figcaption></figcaption></figure>
 3. In **"Application name"**, type the name of your app.
 4. In **"Description (optional)"**, fill in the description of your app if needed.
 5. In "**Application logo (optional)"**, upload your logo applications if you have.
@@ -1498,39 +1715,125 @@ description: >-
 
 
 
+==> developer/vector-stores.md <==
+---
+description: >-
+  This guide will help you understand how to use the Rememberizer Vector Store
+  as a developer.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
+# Vector Stores
+
+The Rememberizer Vector Store simplifies the process of dealing with vector data, allowing you to focus on text input and leveraging the power of vectors for various applications such as search and data analysis.
+
+### Introduction
+
+The Rememberizer Vector Store is designed to provide an easy-to-use interface for handling vector data. Unlike traditional vector databases like Pinecone, Rememberizer Vector Store allows you to work directly with text. The service will handle chunking, vectorizing, and storing the text data, making it easier for you to focus on your core application logic.
+
+### Getting Started
+
+#### Creating a Vector Store
+
+1. Navigate to the Vector Stores Section in your dashboard
+2. Click on "Create new Vector Store":
+   * A form will appear prompting you to enter details.
+3. Fill in the Details:
+   * **Name**: Provide a unique name for your vector store.
+   * **Description**: Write a brief description of the vector store.
+   * **Data Schema**: Define the vector dimensions and any additional fields.
+     * You can optionally specify the embedding model, indexing strategy, and similarity metrics. These settings influence how vectors are generated and compared, optimizing performance for your specific use case.
+4. Submit the Form:
+   * Click on the "Create" button. You will receive a success notification, and the new store will appear in your vector store list.
+
+<figure><img src="../.gitbook/assets/create_vector_DB_store.png" alt=""><figcaption><p>Create a New Vector Store</p></figcaption></figure>
+
+#### Managing Vector Stores
+
+1. View and Edit Vector Stores:
+   * Access the management dashboard to view, edit, or delete vector stores.
+2. Viewing Documents:
+   * Browse individual documents and their associated metadata within a specific vector store.
+3. Statistics:
+   * View detailed statistics such as the number of vectors stored, query performance, and operational metrics.
+
+<figure><img src="../.gitbook/assets/vector_store_management.png" alt=""><figcaption><p>View Details of a Vector Store</p></figcaption></figure>
+
+### API Key Management
+
+API keys are used to authenticate and authorize access to the Rememberizer Vector Store's API endpoints. Proper management of API keys is essential for maintaining the security and integrity of your vector stores. This section covers how to create and revoke API keys for your Vector Stores.
+
+#### Creating API Keys
+
+1. Head over to your Vector Store details page
+2. Navigate to the API Key Management Section:
+   * It can be found within the "Configuration" tab
+3. Click on **"Add API Key"**:
+   * A form will appear prompting you to enter details.
+4. Fill in the Details:
+   * **Name**: Provide a name for the API key to help you identify its use case.
+5. Submit the Form:
+   * Click on the "Create" button. The new API key will be generated and displayed. Make sure to copy and store it securely. This key is used to authenticate requests to that specific vector store.
+
+<figure><img src="../.gitbook/assets/vector_store_api_key.png" alt=""><figcaption><p>Create a New API Key</p></figcaption></figure>
+
+#### Revoking API Keys
+
+If an API key is no longer needed, you can delete it to prevent any potential misuse.
+
+For security reasons, you may want to rotate your API keys periodically. This involves generating a new key and revoking the old one.
+
+### Retrieving Vector Store Information Using the API Key
+
+After creating a new Vector Store and generating an API key, you can share this key with users who need access to the Vector Store. The API key allows users to upload documents, search documents, and perform other operations within the Vector Store. However, before users can interact with the Vector Store, they need to retrieve the Vector Store's ID and other related information using the API key.
+
+Detail information for each API endpoint and response, visit the [vector-store](api-documentations/vector-store/ "mention") page.
+
+***
+
+Make sure to handle the API keys securely and follow best practices for API key management.
+
+
 ==> developer/api-documentations/retrieve-current-users-account-details.md <==
 # Retrieve current user's account details
 
-{% swagger src="../../.gitbook/assets/rememberizer_openai (1) (1).yml" path="/account/" method="get" %}
-[rememberizer_openai (1) (1).yml](<../../.gitbook/assets/rememberizer_openai (1) (1).yml>)
+{% swagger src="../../.gitbook/assets/rememberizer_openapi (1).yml" path="/account/" method="get" %}
+[rememberizer_openapi (1).yml](<../../.gitbook/assets/rememberizer_openapi (1).yml>)
 {% endswagger %}
-
 
 
 ==> developer/api-documentations/retrieve-slacks-content.md <==
 # Retrieve Slack's content
 
-{% swagger src="../../.gitbook/assets/rememberizer_openai (6).yml" path="/discussions/{discussion_id}/contents/" method="get" %}
-[rememberizer_openai (6).yml](<../../.gitbook/assets/rememberizer_openai (6).yml>)
+{% swagger src="../../.gitbook/assets/rememberizer_openapi (1).yml" path="/discussions/{discussion_id}/contents/" method="get" %}
+[rememberizer_openapi (1).yml](<../../.gitbook/assets/rememberizer_openapi (1).yml>)
 {% endswagger %}
 
 
 ==> developer/api-documentations/retrieve-document-contents.md <==
 # Retrieve document contents
 
-{% swagger src="../../.gitbook/assets/rememberizer_openai (1) (1).yml" path="/documents/{document_id}/contents/" method="get" %}
-[rememberizer_openai (1) (1).yml](<../../.gitbook/assets/rememberizer_openai (1) (1).yml>)
+{% swagger src="../../.gitbook/assets/rememberizer_openapi (1).yml" path="/documents/{document_id}/contents/" method="get" %}
+[rememberizer_openapi (1).yml](<../../.gitbook/assets/rememberizer_openapi (1).yml>)
 {% endswagger %}
-
 
 
 ==> developer/api-documentations/get-all-added-public-knowledge.md <==
 # Get all added public knowledge
 
-{% swagger src="../../.gitbook/assets/rememberizer_openai (5).yml" path="/common_knowledge/subscribed-list/" method="get" %}
-[rememberizer_openai (5).yml](<../../.gitbook/assets/rememberizer_openai (5).yml>)
+{% swagger src="../../.gitbook/assets/rememberizer_openapi (1).yml" path="/common_knowledge/subscribed-list/" method="get" %}
+[rememberizer_openapi (1).yml](<../../.gitbook/assets/rememberizer_openapi (1).yml>)
 {% endswagger %}
-
 
 
 ==> developer/api-documentations/README.md <==
@@ -1542,35 +1845,107 @@ You can authenticate APIs using either [OAuth2](../authorizing-rememberizer-apps
 ==> developer/api-documentations/search-for-documents-by-semantic-similarity.md <==
 # Search for documents by semantic similarity
 
-{% swagger src="../../.gitbook/assets/rememberizer_openai (1) (1).yml" path="/documents/search/" method="get" %}
-[rememberizer_openai (1) (1).yml](<../../.gitbook/assets/rememberizer_openai (1) (1).yml>)
+{% swagger src="../../.gitbook/assets/rememberizer_openapi (1).yml" path="/documents/search/" method="get" %}
+[rememberizer_openapi (1).yml](<../../.gitbook/assets/rememberizer_openapi (1).yml>)
 {% endswagger %}
-
 
 
 ==> developer/api-documentations/retrieve-documents.md <==
 # Retrieve documents
 
-{% swagger src="../../.gitbook/assets/rememberizer_openai (1) (1).yml" path="/documents/" method="get" %}
-[rememberizer_openai (1) (1).yml](<../../.gitbook/assets/rememberizer_openai (1) (1).yml>)
+{% swagger src="../../.gitbook/assets/rememberizer_openapi (1).yml" path="/documents/" method="get" %}
+[rememberizer_openapi (1).yml](<../../.gitbook/assets/rememberizer_openapi (1).yml>)
 {% endswagger %}
-
 
 
 ==> developer/api-documentations/list-available-data-source-integrations.md <==
 # List available data source integrations
 
-{% swagger src="../../.gitbook/assets/rememberizer_openai (3).yml" path="/integrations/" method="get" %}
-[rememberizer_openai (3).yml](<../../.gitbook/assets/rememberizer_openai (3).yml>)
+{% swagger src="../../.gitbook/assets/rememberizer_openapi (1).yml" path="/integrations/" method="get" %}
+[rememberizer_openapi (1).yml](<../../.gitbook/assets/rememberizer_openapi (1).yml>)
 {% endswagger %}
-
 
 
 ==> developer/api-documentations/memorize-content-to-rememberizer.md <==
 # Memorize content to Rememberizer
 
-{% swagger src="../../.gitbook/assets/rememberizer_openai (1) (1).yml" path="/documents/memorize/" method="post" %}
-[rememberizer_openai (1) (1).yml](<../../.gitbook/assets/rememberizer_openai (1) (1).yml>)
+{% swagger src="../../.gitbook/assets/rememberizer_openapi (1).yml" path="/documents/memorize/" method="post" %}
+[rememberizer_openapi (1).yml](<../../.gitbook/assets/rememberizer_openapi (1).yml>)
+{% endswagger %}
+
+
+==> developer/api-documentations/vector-store/get-the-information-of-a-document.md <==
+# Get the information of a document
+
+{% swagger src="../../../.gitbook/assets/rememberizer_openapi.yml" path="/vector-stores/{vector-store-id}/documents/{document-id}" method="get" %}
+[rememberizer_openapi.yml](../../../.gitbook/assets/rememberizer_openapi.yml)
+{% endswagger %}
+
+
+
+==> developer/api-documentations/vector-store/remove-a-document-in-vector-store.md <==
+# Remove a document in Vector Store
+
+{% swagger src="../../../.gitbook/assets/rememberizer_openapi.yml" path="/vector-stores/{vector-store-id}/documents/{document-id}/" method="delete" %}
+[rememberizer_openapi.yml](../../../.gitbook/assets/rememberizer_openapi.yml)
+{% endswagger %}
+
+
+
+==> developer/api-documentations/vector-store/update-files-content-in-a-vector-store.md <==
+# Update file's content in a Vector Store
+
+{% swagger src="../../../.gitbook/assets/rememberizer_openapi.yml" path="/vector-stores/{vector-store-id}/documents/{document-id}/" method="patch" %}
+[rememberizer_openapi.yml](../../../.gitbook/assets/rememberizer_openapi.yml)
+{% endswagger %}
+
+
+
+==> developer/api-documentations/vector-store/search-for-vector-store-documents-by-semantic-similarity.md <==
+# Search for Vector Store documents by semantic similarity
+
+{% swagger src="../../../.gitbook/assets/rememberizer_openapi (1).yml" path="/vector-stores/{vector-store-id}/documents/search" method="get" %}
+[rememberizer_openapi (1).yml](<../../../.gitbook/assets/rememberizer_openapi (1).yml>)
+{% endswagger %}
+
+
+==> developer/api-documentations/vector-store/upload-files-to-a-vector-store.md <==
+# Upload files to a Vector Store
+
+{% swagger src="../../../.gitbook/assets/rememberizer_openapi.yml" path="/vector-stores/{vector-store-id}/documents/upload" method="post" %}
+[rememberizer_openapi.yml](../../../.gitbook/assets/rememberizer_openapi.yml)
+{% endswagger %}
+
+
+
+==> developer/api-documentations/vector-store/get-a-list-of-documents-in-a-vector-store.md <==
+# Get a list of documents in a Vector Store
+
+{% swagger src="../../../.gitbook/assets/rememberizer_openapi.yml" path="/vector-stores/{vector-store-id}/documents" method="get" %}
+[rememberizer_openapi.yml](../../../.gitbook/assets/rememberizer_openapi.yml)
+{% endswagger %}
+
+
+
+==> developer/api-documentations/vector-store/README.md <==
+# Vector Store APIs
+
+
+
+==> developer/api-documentations/vector-store/get-vector-stores-information.md <==
+# Get vector store's information
+
+{% swagger src="../../../.gitbook/assets/rememberizer_openapi.yml" path="/vector-stores/me" method="get" %}
+[rememberizer_openapi.yml](../../../.gitbook/assets/rememberizer_openapi.yml)
+{% endswagger %}
+
+
+
+==> developer/api-documentations/vector-store/add-new-text-document-to-a-vector-store.md <==
+# Add new text document to a Vector Store
+
+{% swagger src="../../../.gitbook/assets/rememberizer_openapi.yml" path="/vector-stores/{vector-store-id}/documents/create" method="post" %}
+[rememberizer_openapi.yml](../../../.gitbook/assets/rememberizer_openapi.yml)
 {% endswagger %}
 
 
@@ -2298,6 +2673,17 @@ description: >-
 * **Gmail Label Management**: Resolved an issue when deleting Gmail labels, ensuring smoother email integration.
 * **Exception Handling**: Improved error notification system to better manage and communicate system exceptions.
 
+
+==> notices/releases/oct-18th-2024.md <==
+---
+description: >-
+  This release focuses on improving document saving reliability.
+---
+# Oct 18th, 2024
+
+### Bug Fixes
+
+- **Enhanced Document Saving Stability**: Improved the document saving process to prevent potential conflicts during simultaneous edits.
 
 ==> notices/releases/feb-19th-2024.md <==
 ---
