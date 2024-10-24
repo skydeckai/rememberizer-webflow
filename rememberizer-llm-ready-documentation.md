@@ -1,6 +1,6 @@
 # Rememberizer LLM Ready Documentation
 
-*Generated at 2024-10-23 03:30:43 PDT. Available as raw content at [rememberizer-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/rememberizer-webflow/refs/heads/main/rememberizer-llm-ready-documentation.md).*
+*Generated at 2024-10-23 03:30:43 PDT. Available as raw content at [rememberizer-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/rememberizer-webflow/refs/heads/docs/rememberizer-llm-ready-documentation.md).*
 
 This document provides a comprehensive, consolidated reference of Rememberizer's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
