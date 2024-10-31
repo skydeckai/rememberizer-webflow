@@ -2400,7 +2400,7 @@ figcaption {
 .hero-title {
   grid-column-gap: 21px;
   grid-row-gap: 21px;
-  flex-flow: column;
+  flex-flow: row;
   justify-content: center;
   align-self: stretch;
   align-items: center;
@@ -9034,7 +9034,7 @@ figcaption {
   justify-content: space-between;
   align-self: auto;
   align-items: center;
-  margin-left: 11rem;
+  margin-left: 2rem;
   display: flex;
   position: static;
 }
@@ -9190,6 +9190,7 @@ figcaption {
 .uui-text-size-large {
   color: var(--untitled-ui--gray600);
   letter-spacing: normal;
+  margin-bottom: 20px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 1.125rem;
   line-height: 1.5;
@@ -9206,7 +9207,8 @@ figcaption {
 }
 
 .uui-heading-subheading {
-  color: var(--untitled-ui--primary600);
+  color: var(--royal-blue);
+  -webkit-text-stroke-color: var(--royal-blue);
   margin-bottom: .75rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 1rem;
@@ -9291,8 +9293,8 @@ figcaption {
 }
 
 .uui-layout56_image {
-  border: .25rem solid var(--untitled-ui--gray900);
-  border-radius: .5rem;
+  border: 0rem solid var(--untitled-ui--gray900);
+  border-radius: 0;
   width: 100%;
 }
 
@@ -15890,6 +15892,10 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
   .bar-dropdown-link {
     padding-left: 0;
+  }
+
+  .nav-content-icon {
+    margin-top: 0;
   }
 
   .hide-mobile-portrait {
