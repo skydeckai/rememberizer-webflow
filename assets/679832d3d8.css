@@ -2054,9 +2054,9 @@ textarea.w-input, textarea.w-select {
 }
 
 :root {
-  --untitled-ui--white: white;
   --untitled-ui--gray700: #344054;
   --untitled-ui--primary600: #7f56d9;
+  --untitled-ui--white: white;
   --untitled-ui--primary700: #6941c6;
   --untitled-ui--primary100: #f4ebff;
   --untitled-ui--gray600: #475467;
@@ -2400,7 +2400,7 @@ figcaption {
 .hero-title {
   grid-column-gap: 21px;
   grid-row-gap: 21px;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: center;
   align-self: stretch;
   align-items: center;
@@ -2776,13 +2776,8 @@ figcaption {
 }
 
 .section.bottom {
-  background-color: var(--untitled-ui--white);
   padding-top: 0;
   padding-bottom: 0;
-}
-
-.section.vb {
-  background-color: var(--untitled-ui--white);
 }
 
 .section-title-wrapper {
@@ -5254,6 +5249,11 @@ figcaption {
   padding-bottom: 300px;
 }
 
+.subpage-header.contact-1.form {
+  justify-content: center;
+  align-items: center;
+}
+
 .subpage-header.with-contact-info {
   background-image: linear-gradient(#0009, #0009), url("https://cdn.prod.website-files.com/656fc35f7b92e991c863cdc4/656fc35f7b92e991c863cf0d_Photo-5.jpg");
   background-position: 0 0, 50%;
@@ -6357,7 +6357,7 @@ figcaption {
 .blog-post-page-content {
   background-color: #fff;
   border-radius: 4px;
-  width: 100%;
+  width: 80%;
   margin: -140px auto 60px;
   padding: 70px;
   display: block;
@@ -9041,7 +9041,7 @@ figcaption {
   justify-content: space-between;
   align-self: auto;
   align-items: center;
-  margin-left: 6rem;
+  margin-left: 4rem;
   display: flex;
   position: static;
 }
@@ -9721,7 +9721,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   }
 
   .hero-title {
-    flex-flow: row;
+    flex-flow: column;
     margin-top: 0;
   }
 
@@ -9742,12 +9742,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   }
 
   .section.bottom {
-    background-color: var(--untitled-ui--white);
     padding-top: 0;
-  }
-
-  .section.vb {
-    background-color: var(--untitled-ui--white);
   }
 
   .image-section-overlay.pricing {
@@ -9787,10 +9782,6 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
   .cta-row {
     margin-left: auto;
-  }
-
-  .blog-post-page-content {
-    width: 100%;
   }
 
   .container-2 {
@@ -10064,10 +10055,6 @@ html.w-mod-js [data-ix="hide-lightbox"] {
     height: 350px;
   }
 
-  .navbar-menu-2 {
-    margin-left: 7rem;
-  }
-
   .hero-title-2, .hero-title-3 {
     margin-top: 0;
   }
@@ -10158,7 +10145,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
 @media screen and (min-width: 1920px) {
   .hero-title {
-    flex-flow: row;
+    flex-flow: column;
   }
 
   .button {
@@ -10167,25 +10154,6 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
   .section {
     margin-bottom: 140px;
-  }
-
-  .section.blog-page-section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .section.bottom {
-    background-color: var(--untitled-ui--white);
-    margin-bottom: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .section.vb {
-    background-color: #fff;
-    margin-bottom: 0;
-    padding-top: 100px;
-    padding-bottom: 100px;
   }
 
   .hero-background-video {
@@ -10211,12 +10179,6 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
   .page-subtitle {
     margin-top: 0;
-  }
-
-  .blog-post-page-content {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
   }
 
   .animation {
@@ -10348,9 +10310,6 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   .navbar-component {
     width: 100%;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
   }
 
   .uui-button-tertiary-gray.hide-tablet {
@@ -10525,7 +10484,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   .hero-title {
     grid-column-gap: 17px;
     grid-row-gap: 17px;
-    flex-flow: row;
+    flex-flow: column;
     margin-top: 0;
     padding-bottom: 0;
   }
@@ -11425,7 +11384,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   }
 
   .blog-post-page-content {
-    width: 100%;
+    width: 90%;
     padding: 50px;
   }
 
@@ -14031,7 +13990,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   .about-value {
     flex-flow: column;
     margin-left: 0;
-    padding-right: 20px;
+    padding-right: 40px;
     display: flex;
   }
 
@@ -15732,10 +15691,6 @@ html.w-mod-js [data-ix="hide-lightbox"] {
     font-size: 12px;
   }
 
-  .vectors-wrapper {
-    margin-top: 0;
-  }
-
   .border, .picture {
     display: none;
   }
@@ -15754,7 +15709,6 @@ html.w-mod-js [data-ix="hide-lightbox"] {
     background-position: 50%;
     background-repeat: repeat;
     background-size: contain;
-    padding-top: 120px;
   }
 
   .link-block {
