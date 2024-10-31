@@ -2054,9 +2054,9 @@ textarea.w-input, textarea.w-select {
 }
 
 :root {
+  --untitled-ui--white: white;
   --untitled-ui--gray700: #344054;
   --untitled-ui--primary600: #7f56d9;
-  --untitled-ui--white: white;
   --untitled-ui--primary700: #6941c6;
   --untitled-ui--primary100: #f4ebff;
   --untitled-ui--gray600: #475467;
@@ -2400,7 +2400,7 @@ figcaption {
 .hero-title {
   grid-column-gap: 21px;
   grid-row-gap: 21px;
-  flex-flow: column;
+  flex-flow: row;
   justify-content: center;
   align-self: stretch;
   align-items: center;
@@ -2776,8 +2776,13 @@ figcaption {
 }
 
 .section.bottom {
+  background-color: var(--untitled-ui--white);
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.section.vb {
+  background-color: var(--untitled-ui--white);
 }
 
 .section-title-wrapper {
@@ -9716,7 +9721,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   }
 
   .hero-title {
-    flex-flow: column;
+    flex-flow: row;
     margin-top: 0;
   }
 
@@ -9737,7 +9742,12 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   }
 
   .section.bottom {
+    background-color: var(--untitled-ui--white);
     padding-top: 0;
+  }
+
+  .section.vb {
+    background-color: var(--untitled-ui--white);
   }
 
   .image-section-overlay.pricing {
@@ -10148,7 +10158,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
 @media screen and (min-width: 1920px) {
   .hero-title {
-    flex-flow: column;
+    flex-flow: row;
   }
 
   .button {
@@ -10162,6 +10172,20 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   .section.blog-page-section {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .section.bottom {
+    background-color: var(--untitled-ui--white);
+    margin-bottom: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .section.vb {
+    background-color: #fff;
+    margin-bottom: 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   .hero-background-video {
@@ -10501,7 +10525,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   .hero-title {
     grid-column-gap: 17px;
     grid-row-gap: 17px;
-    flex-flow: column;
+    flex-flow: row;
     margin-top: 0;
     padding-bottom: 0;
   }
