@@ -1,0 +1,153 @@
+<html><head><style>
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+    .current-language {
+      padding: 8px 12px;
+      font-size: 12px;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 90px;
+      justify-content: space-between;
+    }
+    .current-language::after {
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+      }
+    .current-language.open::after {
+      transform: rotate(-90deg);
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #aaa;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 90px;
+      border-bottom: none;
+      font-size: 12px;
+    }
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown li.selected {
+      font-weight: bold;
+    }
+  </style><script id="i18n-script">
+const supportedLanguages = [{"value":"en","text":"English"},{"value":"fr","text":"Français"},{"value":"ja","text":"日本語"},{"value":"ko","text":"한국어"},{"value":"es","text":"Español"},{"value":"de","text":"Deutsch"},{"value":"zh-cn","text":"简体中文"},{"value":"zh-hk","text":"繁體中文"},{"value":"pt","text":"Português"},{"value":"ar","text":"العربية"}];
+
+window.changeLanguage = function(language) {
+  const url = new URL(window.location);
+  const pathParts = url.pathname.split('/').filter(Boolean);
+
+  if (true) {
+    if (pathParts[0] && supportedLanguages.some(lang => lang.value === pathParts[0])) {
+      pathParts[0] = language;
+    } else {
+      pathParts.unshift(language);
+    }
+    url.pathname = '/' + pathParts.join('/');
+  } else {
+    if (language === "en") {
+      url.searchParams.delete("lang");
+    } else {
+      url.searchParams.set("lang", language);
+    }
+  }
+
+  window.location.href = url.href;
+};
+
+window.toggleLanguageDropdown = function() {
+  const dropdown = document.querySelector('.language-dropdown');
+  const currentLanguage = document.querySelector('.current-language');
+  if (dropdown) {
+    const isOpen = dropdown.style.display === 'block';
+    dropdown.style.display = isOpen ? 'none' : 'block';
+    currentLanguage.classList.toggle('open', !isOpen);
+  }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+  const currentLanguageElement = document.querySelector('.current-language');
+  if (currentLanguageElement) {
+    currentLanguageElement.addEventListener('click', window.toggleLanguageDropdown);
+  }
+
+  const dropdownItems = document.querySelectorAll('.language-dropdown li');
+  dropdownItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      const selectedLang = this.getAttribute('data-lang');
+      window.changeLanguage(selectedLang);
+      window.toggleLanguageDropdown();
+    });
+  });
+});
+
+document.addEventListener('click', function(event) {
+  const languageSelector = document.getElementById('languageSelector');
+  if (languageSelector) {
+    const isClickInside = languageSelector.contains(event.target);
+    if (!isClickInside) {
+      const dropdown = document.querySelector('.language-dropdown');
+      const currentLanguage = document.querySelector('.current-language');
+      if (dropdown) {
+        dropdown.style.display = 'none';
+        currentLanguage.classList.remove('open');
+      }
+    }
+  }
+});
+</script><script>
+  const docsLanguage = [{"value":"en","text":"English"},{"value":"fr","text":"Français"},{"value":"ja","text":"日本語"},{"value":"ko","text":"한국어"},{"value":"es","text":"Español"},{"value":"de","text":"Deutsch"},{"value":"zh-cn","text":"简体中文"},{"value":"zh-hk","text":"繁體中文"},{"value":"pt","text":"Português"},{"value":"ar","text":"العربية"}];
+
+  document.addEventListener("DOMContentLoaded", function() {
+  
+    const links = document.querySelectorAll("a[href]");
+    
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/")) {
+        const url = new URL(href);
+        const language = getLanguageFromURL();
+        if (language === "en") return;
+        const newPath = `/${language}${url.pathname}`;
+        url.pathname = newPath;
+        link.setAttribute("href", url.href);
+      }
+    });
+  });
+
+function getLanguageFromURL() {
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const supportedLanguageCodes = docsLanguage.map(lang => lang.value);
+  
+  if (pathParts.length > 0 && supportedLanguageCodes.includes(pathParts[0])) {
+    return pathParts[0];
+  }
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("lang") || "en";
+}
+  </script><link rel="alternate" hreflang="en" href="https://skydeckai.github.io/rememberizer-webflow//en/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="fr" href="https://skydeckai.github.io/rememberizer-webflow//fr/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="ja" href="https://skydeckai.github.io/rememberizer-webflow//ja/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="ko" href="https://skydeckai.github.io/rememberizer-webflow//ko/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="es" href="https://skydeckai.github.io/rememberizer-webflow//es/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="de" href="https://skydeckai.github.io/rememberizer-webflow//de/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="zh-cn" href="https://skydeckai.github.io/rememberizer-webflow//zh-cn/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="zh-hk" href="https://skydeckai.github.io/rememberizer-webflow//zh-hk/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="pt" href="https://skydeckai.github.io/rememberizer-webflow//pt/google11d07b4fe11fc26c.html"><link rel="alternate" hreflang="ar" href="https://skydeckai.github.io/rememberizer-webflow//ar/google11d07b4fe11fc26c.html"><link rel="canonical" href="https://skydeckai.github.io/rememberizer-webflow//es/google11d07b4fe11fc26c.html"></head><body style="direction: ltr;">google-site-verification: google11d07b4fe11fc26c.html<div id="languageSelector" class="language-selector"><div class="current-language">Español</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es" class="selected">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li></ul></div></body></html>
