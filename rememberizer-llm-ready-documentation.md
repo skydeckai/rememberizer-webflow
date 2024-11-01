@@ -1,6 +1,6 @@
 # Rememberizer LLM Ready Documentation
 
-*Generated at 2024-10-23 03:30:43 PDT. Available as raw content at [rememberizer-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/rememberizer-webflow/refs/heads/docs/rememberizer-llm-ready-documentation.md).*
+*Generated at 2024-10-31 20:41:45 PDT. Available as raw content at [rememberizer-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/rememberizer-webflow/refs/heads/docs/rememberizer-llm-ready-documentation.md).*
 
 This document provides a comprehensive, consolidated reference of Rememberizer's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -53,6 +53,8 @@ This document provides a comprehensive, consolidated reference of Rememberizer's
   * [Terms of Use](notices/terms-of-use.md)
   * [Privacy Policy](notices/privacy-policy.md)
   * [Releases](notices/releases/README.md)
+    * [Nov 1st, 2024](notices/releases/nov-1st-2024.md)
+    * [Oct 25th, 2024](notices/releases/oct-25th-2024.md)
     * [Oct 18th, 2024](notices/releases/oct-18th-2024.md)
     * [Oct 11th, 2024](notices/releases/oct-11th-2024.md)
     * [Oct 4th, 2024](notices/releases/oct-4th-2024.md)
@@ -2257,6 +2259,23 @@ description: >-
 - **Search Field Improvement**: The search field on the Knowledge Details page now autofills based on the "file" query parameter for more precise searches.
 - **Reindex Collection Post-Loading**: Enhanced the loading result API to reindex collections automatically.
 
+==> notices/releases/oct-25th-2024.md <==
+---
+description: >-
+  This release focuses on improving document indexing reliability and includes various bug fixes to enhance your experience.
+---
+# Oct 25th, 2024
+
+### New Features
+
+- **Automatic Retry for Indexing Failures**: Implemented an auto-retry mechanism to ensure documents that failed to index are retried, enhancing data consistency.
+
+### Bug Fixes
+
+- **Improved Search Functionality**: Fixed an issue preventing searches from apps connected to mementos without memories.
+- **System Stability Enhancements**: Resolved overlapping database connections during concurrent tasks to improve performance.
+- **Slack Synchronization Adjustments**: Temporarily disabled synchronization for empty Slack channels to avoid unnecessary errors.
+
 ==> notices/releases/feb-5th-2024.md <==
 ---
 description: >-
@@ -2849,6 +2868,30 @@ description: >-
 * **Empty Search Query Handling**: Resolved an issue where empty search queries were not properly handled, improving search reliability.
 * **Email Integration**: Fixed an issue related to email source handling when interacting with GPT, ensuring smoother integration with email services.
 
+
+==> notices/releases/nov-1st-2024.md <==
+---
+description: >-
+    This release focuses on enhancing performance, improving authentication, and increasing overall reliability for a better user experience.
+---
+
+# Nov 1st, 2024
+
+### Improvements
+
+- **Faster Search Performance**: Optimized backend processes to provide quicker access to your documents.
+- **Enhanced Authentication System**: Upgraded authentication for improved security and reliability.
+- **Improved Indexing Reliability**: Enhanced monitoring for document indexing to ensure all your documents are searchable.
+- **Optimized System Performance**: Implemented backend optimizations for a faster and more efficient service.
+
+### New Features
+
+- **Automatic Data Source Reconnection**: Data sources now stay connected automatically, ensuring uninterrupted access to your information.
+
+### Bug Fixes
+
+- **Enhanced Privacy Controls**: Fixed an issue that prevented unauthorized listing in user views, improving privacy.
+- **Resolved App Authorization Issues**: Corrected redirect problems with authorized apps for seamless access.
 
 ==> notices/b2b/README.md <==
 ---
