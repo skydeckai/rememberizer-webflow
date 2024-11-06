@@ -6986,6 +6986,7 @@ figcaption {
 }
 
 .image-4 {
+  width: 80%;
   margin-top: -15px;
   margin-left: -5px;
 }
@@ -9772,6 +9773,10 @@ figcaption {
   font-weight: 600;
 }
 
+.text-block-27 {
+  font-family: Droid Sans, sans-serif;
+}
+
 html.w-mod-js [data-ix="hide-block-title"] {
   opacity: 0;
   transform: translate(0, -10px);
@@ -10398,7 +10403,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   }
 
   .subpage-header.contact-1.form {
-    background-image: linear-gradient(#0000, #0000), url("https://cdn.prod.website-files.com/656fc35f7b92e991c863cdc4/656fc35f7b92e991c863ce9a_Photo-6.jpg");
+    background-image: linear-gradient(#0d5be7c2, #0d5be7c2), url("https://cdn.prod.website-files.com/656fc35f7b92e991c863cdc4/656fc35f7b92e991c863ce9a_Photo-6.jpg");
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
     flex: 1;
@@ -11789,6 +11794,14 @@ html.w-mod-js [data-ix="hide-lightbox"] {
     overflow: auto;
   }
 
+  .image-5 {
+    width: 110%;
+  }
+
+  .image-6 {
+    width: 130%;
+  }
+
   .blog-grid {
     grid-column-gap: 22px;
     grid-template-columns: 1fr .6fr;
@@ -12704,7 +12717,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
     background-size: contain;
     width: 100%;
     height: 40%;
-    margin-top: -77px;
+    margin-top: -104px;
     padding-bottom: 0;
     padding-right: 0;
     position: absolute;
@@ -14206,6 +14219,14 @@ html.w-mod-js [data-ix="hide-lightbox"] {
     max-height: 280px;
   }
 
+  .image-4 {
+    width: 40%;
+  }
+
+  .image-6 {
+    width: 50%;
+  }
+
   .blog-grid {
     grid-row-gap: 62px;
     grid-template-rows: auto auto;
@@ -14918,6 +14939,10 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
   .text-block-25 {
     font-size: 16px;
+  }
+
+  .text-block-27 {
+    font-size: 14px;
   }
 }
 
@@ -16228,6 +16253,18 @@ html.w-mod-js [data-ix="hide-lightbox"] {
     overflow: clip;
   }
 
+  .image-3 {
+    width: 40%;
+  }
+
+  .image-4 {
+    width: 80%;
+  }
+
+  .image-6 {
+    width: 95%;
+  }
+
   .button-3 {
     padding: 0 25px 0 10px;
   }
@@ -16303,11 +16340,12 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
   .vectors-wrapper {
     margin-top: 0;
+    box-shadow: 5px 0 11px #02ff0252;
   }
 
   .vectors-wrapper.lightning {
     margin-top: 0;
-    box-shadow: 5px 5px 11px #02de02;
+    box-shadow: -1px 0 11px #02de02;
   }
 
   .border {
@@ -16613,6 +16651,11 @@ html.w-mod-js [data-ix="hide-lightbox"] {
 
   .uui-layout56_image {
     margin-top: 0;
+    padding-left: 0;
+  }
+
+  .uui-layout56_image.casa {
+    padding-left: 0;
   }
 
   .uui-layout41_lightbox-image-02 {
@@ -16792,8 +16835,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   }
 
   .div-block-16 {
-    background-position: 50%;
-    background-size: cover;
+    background-image: none;
     width: 100%;
     height: 80%;
     margin-top: -119px;
