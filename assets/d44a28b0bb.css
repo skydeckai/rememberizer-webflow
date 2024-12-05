@@ -14958,7 +14958,7 @@ html.w-mod-js [data-ix="hide-lightbox"] {
   }
 
   img {
-    margin-top: -82px;
+    margin-top: 0;
   }
 
   blockquote {
@@ -15969,7 +15969,10 @@ html.w-mod-js [data-ix="hide-lightbox"] {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     flex-flow: column;
-    position: static;
+    justify-content: flex-start;
+    align-items: stretch;
+    display: flex;
+    position: relative;
   }
 
   .element-container.navigation {
