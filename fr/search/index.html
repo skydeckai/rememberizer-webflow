@@ -167,7 +167,63 @@ function getLanguageFromURL() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("lang") || "en";
 }
-  </script><link rel="alternate" hreflang="en" href="https://try.rememberizer.ai//en/search/index.html"><link rel="alternate" hreflang="fr" href="https://try.rememberizer.ai//fr/search/index.html"><link rel="alternate" hreflang="da" href="https://try.rememberizer.ai//da/search/index.html"><link rel="alternate" hreflang="ja" href="https://try.rememberizer.ai//ja/search/index.html"><link rel="alternate" hreflang="ko" href="https://try.rememberizer.ai//ko/search/index.html"><link rel="alternate" hreflang="es" href="https://try.rememberizer.ai//es/search/index.html"><link rel="alternate" hreflang="de" href="https://try.rememberizer.ai//de/search/index.html"><link rel="alternate" hreflang="zh-cn" href="https://try.rememberizer.ai//zh-cn/search/index.html"><link rel="alternate" hreflang="zh-hk" href="https://try.rememberizer.ai//zh-hk/search/index.html"><link rel="alternate" hreflang="pt" href="https://try.rememberizer.ai//pt/search/index.html"><link rel="alternate" hreflang="ar" href="https://try.rememberizer.ai//ar/search/index.html"><link rel="alternate" hreflang="vi" href="https://try.rememberizer.ai//vi/search/index.html"><link rel="canonical" href="https://try.rememberizer.ai//fr/search/index.html"></head><body style="direction: ltr;"><div class="w-container"><h1>Résultats de recherche</h1><form action="/search" class="w-form"><label for="search">Recherche</label><input class="w-input" id="search" maxlength="256" name="query" placeholder="Search…" required="" type="search"><input class="w-button" type="submit" value="Recherche"></form><div><div><div>Aucun résultat correspondant.</div></div></div></div><script src="https://try.rememberizer.ai//assets/6df36c5add.js" type="text/javascript"></script><script src="https://try.rememberizer.ai//assets/f45fffd839.js" type="text/javascript"></script><!-- Google Tag Manager (noscript) -->
+  </script><style>
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+    .current-language {
+      padding: 8px 12px;
+      font-size: 12px;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 120px;
+      justify-content: space-between;
+    }
+    .current-language::after {
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+      }
+    .current-language.open::after {
+      transform: rotate(-90deg);
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #aaa;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 120px;
+      border-bottom: none;
+      font-size: 12px;
+    }
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown li.selected {
+      font-weight: bold;
+    }
+  </style><link rel="alternate" hreflang="en" href="https://try.rememberizer.ai//en/search/index.html"><link rel="alternate" hreflang="fr" href="https://try.rememberizer.ai//fr/search/index.html"><link rel="alternate" hreflang="da" href="https://try.rememberizer.ai//da/search/index.html"><link rel="alternate" hreflang="ja" href="https://try.rememberizer.ai//ja/search/index.html"><link rel="alternate" hreflang="ko" href="https://try.rememberizer.ai//ko/search/index.html"><link rel="alternate" hreflang="es" href="https://try.rememberizer.ai//es/search/index.html"><link rel="alternate" hreflang="de" href="https://try.rememberizer.ai//de/search/index.html"><link rel="alternate" hreflang="zh-cn" href="https://try.rememberizer.ai//zh-cn/search/index.html"><link rel="alternate" hreflang="zh-hk" href="https://try.rememberizer.ai//zh-hk/search/index.html"><link rel="alternate" hreflang="pt" href="https://try.rememberizer.ai//pt/search/index.html"><link rel="alternate" hreflang="ar" href="https://try.rememberizer.ai//ar/search/index.html"><link rel="alternate" hreflang="vi" href="https://try.rememberizer.ai//vi/search/index.html"><link rel="canonical" href="https://try.rememberizer.ai//fr/search/index.html"></head><body style="direction: ltr;"><div class="w-container"><h1>Résultats de recherche</h1><form action="/search" class="w-form"><label for="search">Recherche</label><input class="w-input" id="search" maxlength="256" name="query" placeholder="Search…" required="" type="search"><input class="w-button" type="submit" value="Recherche"></form><div><div><div>Aucun résultat correspondant.</div></div></div></div><script src="https://try.rememberizer.ai//assets/6df36c5add.js" type="text/javascript"></script><script src="https://try.rememberizer.ai//assets/f45fffd839.js" type="text/javascript"></script><!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PL3BS36W" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div id="languageSelector" class="language-selector"><div class="current-language">Français</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr" class="selected">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div></body></html>
+<div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">Français</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr" class="selected">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div></body></html>
