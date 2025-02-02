@@ -230,6 +230,62 @@ function getLanguageFromURL() {
     .language-dropdown li.selected {
       font-weight: bold;
     }
+  </style><style>
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+    .current-language {
+      padding: 8px 12px;
+      font-size: 12px;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 120px;
+      justify-content: space-between;
+    }
+    .current-language::after {
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+      }
+    .current-language.open::after {
+      transform: rotate(-90deg);
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #aaa;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 120px;
+      border-bottom: none;
+      font-size: 12px;
+    }
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown li.selected {
+      font-weight: bold;
+    }
   </style><link rel="alternate" hreflang="en" href="https://try.rememberizer.ai//en/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="fr" href="https://try.rememberizer.ai//fr/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="da" href="https://try.rememberizer.ai//da/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="ja" href="https://try.rememberizer.ai//ja/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="ko" href="https://try.rememberizer.ai//ko/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="es" href="https://try.rememberizer.ai//es/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="de" href="https://try.rememberizer.ai//de/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="zh-cn" href="https://try.rememberizer.ai//zh-cn/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="zh-hk" href="https://try.rememberizer.ai//zh-hk/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="pt" href="https://try.rememberizer.ai//pt/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="ar" href="https://try.rememberizer.ai//ar/resources/rememberizer-contact-us/index.html"><link rel="alternate" hreflang="vi" href="https://try.rememberizer.ai//vi/resources/rememberizer-contact-us/index.html"><link rel="canonical" href="https://try.rememberizer.ai//da/resources/rememberizer-contact-us/index.html"></head><body class="body-6" style="direction: ltr;"><div class="navbar-component w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><a class="navbar-logo-links w-nav-brand" href="/da"><div class="uui-logo_component-2"><img alt="Untitled UI logotext" class="uui-logo_logotype-3" loading="lazy" src="https://try.rememberizer.ai//assets/a0c760118e.png"></div></a><nav class="navbar-menu-2 w-nav-menu" role="navigation"><div class="bar-menu-left"><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="c4fd50d4-baaf-eb72-0450-69dae116f366"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon-3 w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
 </svg></div><div class="nav-text-2">Løsninger</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="https://rememberizer.ai/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://try.rememberizer.ai//assets/652dbbdb41.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Huskeren for enkeltpersoner</div><div class="uui-text-size-small-3">Hvor brugerdata driver AI-personalisering</div></div></a><a class="bar-dropdown-link w-inline-block" href="#" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://try.rememberizer.ai//assets/652dbbdb41.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Huskeren til Teams</div><div class="uui-text-size-small-3">Kommer snart...</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/solutions/vector-database"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://try.rememberizer.ai//assets/60d3babf4d.svg"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Vector Server</div><div class="uui-text-size-small-3">Hardware og software sammen til vektorindbindinger og RAG i stor skala</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://www.skydeck.ai/" id="w-node-c4fd50d4-baaf-eb72-0450-69dae116f385-e116f35f" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" height="Auto" loading="lazy" src="https://try.rememberizer.ai//assets/dc78d11b5f.png" width="25"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">SkyDeck AI</div><div class="uui-text-size-small-3">Sikker AI-produktivitetsplatform med fokus på erhvervslivet for teams</div></div></a></div></nav></div><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="c4fd50d4-baaf-eb72-0450-69dae116f38d"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon-3 w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
@@ -308,4 +364,4 @@ function getLanguageFromURL() {
 <!-- End Google Tag Manager (noscript) -->
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PL3BS36W" style="display:none;visibility:hidden" width="0"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) --><div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">Dansk</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="da" class="selected">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div></body></html>
+<!-- End Google Tag Manager (noscript) --><div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">Dansk</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="da" class="selected">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div></body></html>
