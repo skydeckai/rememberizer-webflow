@@ -167,119 +167,7 @@ function getLanguageFromURL() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("lang") || "en";
 }
-  </script><style>
-    .language-selector {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 1000;
-      font-family: Arial, sans-serif;
-    }
-    .current-language {
-      padding: 8px 12px;
-      font-size: 12px;
-      border: 1px solid #aaa;
-      background-color: white;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      width: 120px;
-      justify-content: space-between;
-    }
-    .current-language::after {
-      content: "";
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-left: 5px solid #333;
-      margin-left: 8px;
-      transition: transform 0.3s ease;
-      }
-    .current-language.open::after {
-      transform: rotate(-90deg);
-    }
-    .language-dropdown {
-      display: none;
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      background-color: white;
-      border: 1px solid #aaa;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      max-height: 200px;
-      overflow-y: auto;
-      width: 120px;
-      border-bottom: none;
-      font-size: 12px;
-    }
-    .language-dropdown li {
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-    .language-dropdown li:hover {
-      background-color: #f0f0f0;
-    }
-    .language-dropdown li.selected {
-      font-weight: bold;
-    }
-  </style><style>
-    .language-selector {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 1000;
-      font-family: Arial, sans-serif;
-    }
-    .current-language {
-      padding: 8px 12px;
-      font-size: 12px;
-      border: 1px solid #aaa;
-      background-color: white;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      width: 120px;
-      justify-content: space-between;
-    }
-    .current-language::after {
-      content: "";
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-left: 5px solid #333;
-      margin-left: 8px;
-      transition: transform 0.3s ease;
-      }
-    .current-language.open::after {
-      transform: rotate(-90deg);
-    }
-    .language-dropdown {
-      display: none;
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      background-color: white;
-      border: 1px solid #aaa;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      max-height: 200px;
-      overflow-y: auto;
-      width: 120px;
-      border-bottom: none;
-      font-size: 12px;
-    }
-    .language-dropdown li {
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-    .language-dropdown li:hover {
-      background-color: #f0f0f0;
-    }
-    .language-dropdown li.selected {
-      font-weight: bold;
-    }
-  </style><link rel="alternate" hreflang="en" href="https://try.rememberizer.ai//en/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="fr" href="https://try.rememberizer.ai//fr/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="da" href="https://try.rememberizer.ai//da/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="ja" href="https://try.rememberizer.ai//ja/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="ko" href="https://try.rememberizer.ai//ko/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="es" href="https://try.rememberizer.ai//es/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="de" href="https://try.rememberizer.ai//de/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="zh-cn" href="https://try.rememberizer.ai//zh-cn/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="zh-hk" href="https://try.rememberizer.ai//zh-hk/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="pt" href="https://try.rememberizer.ai//pt/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="ar" href="https://try.rememberizer.ai//ar/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="vi" href="https://try.rememberizer.ai//vi/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="canonical" href="https://try.rememberizer.ai//zh-hk/blog/rememberizer-a-first-time-developer-guide/index.html"></head><body style="direction: ltr;"><div class="navbar-component w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><a class="navbar-logo-links w-nav-brand" href="/zh-hk"><div class="uui-logo_component-2"><img alt="Untitled UI logotext" class="uui-logo_logotype-3" loading="lazy" src="https://try.rememberizer.ai//assets/a0c760118e.png"></div></a><nav class="navbar-menu-2 w-nav-menu" role="navigation"><div class="bar-menu-left"><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="c4fd50d4-baaf-eb72-0450-69dae116f366"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon-3 w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+  </script><link rel="alternate" hreflang="en" href="https://try.rememberizer.ai//en/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="fr" href="https://try.rememberizer.ai//fr/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="da" href="https://try.rememberizer.ai//da/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="ja" href="https://try.rememberizer.ai//ja/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="ko" href="https://try.rememberizer.ai//ko/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="es" href="https://try.rememberizer.ai//es/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="de" href="https://try.rememberizer.ai//de/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="zh-cn" href="https://try.rememberizer.ai//zh-cn/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="zh-hk" href="https://try.rememberizer.ai//zh-hk/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="pt" href="https://try.rememberizer.ai//pt/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="ar" href="https://try.rememberizer.ai//ar/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="alternate" hreflang="vi" href="https://try.rememberizer.ai//vi/blog/rememberizer-a-first-time-developer-guide/index.html"><link rel="canonical" href="https://try.rememberizer.ai//zh-hk/blog/rememberizer-a-first-time-developer-guide/index.html"></head><body style="direction: ltr;"><div class="navbar-component w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><a class="navbar-logo-links w-nav-brand" href="/zh-hk"><div class="uui-logo_component-2"><img alt="Untitled UI logotext" class="uui-logo_logotype-3" loading="lazy" src="https://try.rememberizer.ai//assets/a0c760118e.png"></div></a><nav class="navbar-menu-2 w-nav-menu" role="navigation"><div class="bar-menu-left"><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="c4fd50d4-baaf-eb72-0450-69dae116f366"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon-3 w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
 </svg></div><div class="nav-text-2">解決方案</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="https://rememberizer.ai/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://try.rememberizer.ai//assets/652dbbdb41.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">個人用的 Rememberizer</div><div class="uui-text-size-small-3">用戶數據推動 AI 個性化</div></div></a><a class="bar-dropdown-link w-inline-block" href="#" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://try.rememberizer.ai//assets/652dbbdb41.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">記住者（Rememberizer）團隊版</div><div class="uui-text-size-small-3">即將推出...</div></div></a><a class="bar-dropdown-link w-inline-block" href="/zh-hk/solutions/vector-database"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://try.rememberizer.ai//assets/60d3babf4d.svg"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Vector 伺服器</div><div class="uui-text-size-small-3">硬體和軟體結合，用於大規模向量嵌入和RAG</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://www.skydeck.ai/" id="w-node-c4fd50d4-baaf-eb72-0450-69dae116f385-e116f35f" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" height="Auto" loading="lazy" src="https://try.rememberizer.ai//assets/dc78d11b5f.png" width="25"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">天空甲板 AI</div><div class="uui-text-size-small-3">安全的商業優先 AI 生產力平台，專為團隊而設</div></div></a></div></nav></div><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="c4fd50d4-baaf-eb72-0450-69dae116f38d"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon-3 w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
@@ -387,4 +275,4 @@ function getLanguageFromURL() {
 </table></div><h3>填寫 GPT Schema 與 Rememberizer API</h3><p>填入 Rememberizer 的 OpenAPI 規範。在以下鏈接中複製可擴展的第 4 項內容，並將其粘貼到 <strong>Schema</strong> 欄位中：</p><h4>‍<a href="https://docs.rememberizer.ai/developer/creating-a-rememberizer-gpt#rememberizer_openapi.yaml">https://docs.rememberizer.ai/developer/creating-a-rememberizer-gpt#rememberizer_openapi.yaml</a></h4><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:4128pxpx"><div><img alt="" loading="lazy" src="https://try.rememberizer.ai//assets/28f5528a1a.png"></div></figure><h2>隱私政策</h2><p>將此連結新增為隱私政策：<code>https://docs.rememberizer.ai/notices/privacy-policy</code>。</p><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:2632pxpx"><div><img alt="" loading="lazy" src="https://try.rememberizer.ai//assets/d1d0577906.png"></div></figure><p>創建動作後，保存 GPT，然後</p><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:2632pxpx"><div><img alt="" loading="lazy" src="https://try.rememberizer.ai//assets/7fe511cf7e.png"></div></figure><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:2632pxpx"><div><img alt="" loading="lazy" src="https://try.rememberizer.ai//assets/98f091e88d.png"></div></figure><p>複製GPT的連結，它的樣子會像這樣：<a href="https://chat.openai.com/g/g-dSiQf1hmQ-demo-gpt">https://chat.openai.com/g/g-dSiQf1hmQ-demo-gpt</a></p><p>現在回到編輯 GPT</p><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:2632pxpx"><div><img alt="" loading="lazy" src="https://try.rememberizer.ai//assets/b95963a5aa.png"></div></figure><p>複製回調 URL 的連結，它的樣子如下：<a href="https://chat.openai.com/aip/g-16b19be82471cb3841d9ad5515f26d51c0206aaf/oauth/callback">https://chat.openai.com/aip/g-16b19be82471cb3841d9ad5515f26d51c0206aaf/oauth/callback</a>‍</p><h2>更新 Rememberizer 應用程式資訊</h2><h3>GPT 連結及回撥網址</h3><p>填寫上一步的 GPT 連結和回調 URL，然後保存應用程式</p><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:2632pxpx"><div><img alt="" loading="lazy" src="https://try.rememberizer.ai//assets/f534cbd7ae.png"></div></figure><h3>發布為公開，如果你希望你的應用出現在精選應用目錄中。</h3><p>一旦我們審查應用程式，如果沒有問題，我們將發布該應用程式並通知您。這將使您的 Custom GPT 可見於我們的用戶，我們將積極向我們的用戶群推廣您的 GPT。</p><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:2192pxpx"><div><img alt="" loading="lazy" src="https://try.rememberizer.ai//assets/1451190618.png"></div></figure><p>現在我們可以測試這個應用程序</p><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:2632pxpx"><div><img alt="" loading="lazy" src="https://try.rememberizer.ai//assets/4416d5a3ab.png"></div></figure><p>要進行測試，您需要創建一個用戶帳戶並通過作為用戶測試您的 GPT 的過程。我們已經為此創建了一個指南，您可以在這裡查看： <a href="https://try.rememberizer.ai/blog/rememberizer-gpt-a-first-time-user-guide">https://try.rememberizer.ai/blog/rememberizer-gpt-a-first-time-user-guide</a></p><h6>如果您打算開發自己的 AI 應用程序，而不是使用自定義 GPT，請參考進一步閱讀部分。</h6><p><br>本存儲庫包括：</p><p><a href="https://github.com/skydeckai/rememberizer-integration-samples">https://github.com/skydeckai/rememberizer-integration-samples</a></p><p>請提供要翻譯的內容。</p><ul role="list"><li><strong>developer_guide.ipynb: </strong>這個 Jupyter Notebook 是一個為開發者提供的全面指南，旨在幫助他們與 Rememberizer 集成。它包括逐步說明，指導您註冊應用程式，實施 OAuth2 用於用戶授權，以及利用 Rememberizer 的 API 來訪問用戶數據。此筆記本將解釋性文本與可執行的代碼片段相結合，提供了一種實踐學習集成過程的方法。</li><li><strong>callback_server.py: </strong>這個 Python 腳本實現了一個簡單的 Flask 伺服器，旨在處理 Rememberizer 整合的 OAuth2 回調。它在用戶授權您的應用程序後，監聽重定向 URI，捕獲 Rememberizer 發送的授權碼。然後這個碼可用於請求 API 互動的訪問令牌。該腳本是沒有現有伺服器設置的開發者的重要組件，方便快速和簡單的 OAuth2 流程測試和實施。</li><li><strong>rememberizer_openapi: </strong>將放入 GPT 的 OpenAPI 架構。</li></ul><p>這裡是一段操作指導視頻：</p><figure class="w-richtext-align-center w-richtext-figure-type-video" style="padding-bottom:33.723653395784545%"><div><iframe allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/SqSp9MBtvlc" title="Rememberizer-integration-samples"></iframe></div></figure><p>請提供要翻譯的內容。</p></div><div class="single-post-author-block w-clearfix"><div class="post-author-line"></div><img alt="" class="post-author-photo w-dyn-bind-empty" src=""><div class="post-author-name w-dyn-bind-empty"></div><div class="post-author-name description w-dyn-bind-empty"></div></div></div><div class="section-title-wrapper"><h2 class="section-title dont-miss">別錯過這些故事：</h2></div><div class="blog-posts-list-wrapper w-dyn-list"><div class="blog-posts-list related w-clearfix w-dyn-items w-row" role="list"><div class="simple-blog-post-item related w-dyn-item w-col w-col-4" role="listitem"><a class="simple-blog-image-block w-inline-block" href="/zh-hk/blog/how-do-we-pick-our-embedding-model" style="background-image:url(&quot;https://cdn.prod.website-files.com/656fc35f7b92e991c863ce0a/668cf935badcb26b27808804_Blog%20image.png&quot;)"><div class="blog-post-overlay light"></div></a><div class="blog-post-content"><div class="blog-post-date">2024年7月9日</div><a class="blog-post-title-link" href="/zh-hk/blog/how-do-we-pick-our-embedding-model">我們如何選擇嵌入模型？</a><p class="blog-post-summary">在Rememberizer.ai，我們評估了各種向量嵌入模型，以找到最符合我們準確和高效知識嵌入服務需求的模型。</p></div></div><div class="simple-blog-post-item related w-dyn-item w-col w-col-4" role="listitem"><a class="simple-blog-image-block w-inline-block" href="/zh-hk/blog/rememberizer-gpt-a-first-time-user-guide" style="background-image:url(&quot;https://cdn.prod.website-files.com/656fc35f7b92e991c863ce0a/65b8d6e0ce1621faa37992ca_Rememberizer_personal%20(3).png&quot;)"><div class="blog-post-overlay light"></div></a><div class="blog-post-content"><div class="blog-post-date">2024年1月29日</div><a class="blog-post-title-link" href="/zh-hk/blog/rememberizer-gpt-a-first-time-user-guide">記住者 GPT：首次使用者指南</a><p class="blog-post-summary">這本指南提供了有關 Open AI Custom GPT Rememberizer 的清晰簡明步驟，我們設計這個工具以展示 Rememberizer 在 GPTs 中的功能。</p></div></div><div class="simple-blog-post-item related w-dyn-item w-col w-col-4" role="listitem"><a class="simple-blog-image-block w-inline-block" href="/zh-hk/blog/introducing-rememberizer-connect-knowledge-to-your-ai" style="background-image:url(&quot;https://cdn.prod.website-files.com/656fc35f7b92e991c863ce0a/65b7523200497f3ac6391238_Rememberizer%20banner.png&quot;)"><div class="blog-post-overlay light"></div></a><div class="blog-post-content"><div class="blog-post-date">2024年1月28日</div><a class="blog-post-title-link" href="/zh-hk/blog/introducing-rememberizer-connect-knowledge-to-your-ai">介紹 Rememberizer - 將知識連接到您的 AI</a><p class="blog-post-summary">Rememberizer是一個創新的AI平台，通過將個人數據，如文件和對話，整合進應用程序，徹底改變開發者和消費者使用AI的方式。</p></div></div></div></div></div></div><div class="footer-2"><div class="about-text footer-container w-container"><div class="footer-row block w-row"><div class="footer-column-2 badge w-col w-col-6"><div class="div-block-5"><a class="social-btn github w-button" href="https://github.com/skydeckai" rel="noopener noreferrer" target="_blank"></a><a class="social-btn x w-button" href="https://twitter.com/Rememberizer" rel="noopener noreferrer" target="_blank"></a><a class="social-btn linkedin w-button" href="https://www.linkedin.com/company/rememberizer/" rel="noopener noreferrer" target="_blank"></a><a class="social-btn youtube w-button" href="https://www.youtube.com/@RememberizerAI" rel="noopener noreferrer" target="_blank"></a></div><div class="div-block-6"><a class="footer-link" href="https://docs.rememberizer.ai/notices/terms-of-use">使用條款</a><a class="footer-link" href="https://docs.rememberizer.ai/notices/privacy-policy">隱私政策</a><a class="footer-link" href="https://docs.skydeck.ai/notices/cookie-notice">Cookie 通知</a></div><div class="footer-text">© 2024 SkyDeck AI Inc.</div></div><div class="footer-column-2 w-col w-col-6"><div class="link-block-2"><a class="w-inline-block" href="https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9" rel="noopener noreferrer" target="_blank"><img alt="" class="image-20" loading="lazy" src="https://try.rememberizer.ai//assets/063eb63b0d.svg"></a><a class="w-inline-block" href="https://appdefensealliance.dev/casa/tier-2/tier2-overview" rel="noopener noreferrer" target="_blank"><img alt="" class="image-19" loading="lazy" src="https://try.rememberizer.ai//assets/504b865443.png"></a></div></div></div></div></div><script src="https://try.rememberizer.ai//assets/6df36c5add.js" type="text/javascript"></script><script src="https://try.rememberizer.ai//assets/f45fffd839.js" type="text/javascript"></script><!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PL3BS36W" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">繁體中文</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk" class="selected">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div></body></html>
+<div id="languageSelector" class="language-selector"><div class="current-language">繁體中文</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk" class="selected">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div></body></html>
